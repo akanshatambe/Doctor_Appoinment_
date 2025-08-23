@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      margin: 0;
+    }
+
+    /* Navigation bar */
+    nav {
+      background-color: #28a745;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #218838;
+    }
+
+    /* Table styling */
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #28a745;
+      color: white;
+    }
+
+    button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .update-btn {
+      background-color: #28a745;
+    }
+
+    .delete-btn {
+      background-color: #dc3545;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    /* Responsive nav */
+    @media (max-width: 500px) {
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="login.html">Login</a>
+    <a href="old_patient_info.html">Old Patient Info</a>
+    <a href="book_appoinment.html">Book Appointment</a>
+    <a href="follow_up.html">Follow-Up</a>
+  </nav>
+
+  <h2>Patient Information</h2>
+
+  <table id="patientTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Last Appointment</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Abhi Verma</td>
+        <td>9876543210</td>
+        <td>abhi@example.com</td>
+        <td>29</td>
+        <td>Male</td>
+        <td>2025-06-22</td>
+        <td>
+          <button class="update-btn" onclick="updatePatient(this)">Update</button>
+          <button class="delete-btn" onclick="deletePatient(this)">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Akash Verma</td>
+        <td>9876543210</td>
+        <td>akash@45.com</td>
+        <td>29</td>
+        <td>Male</td>
+        <td>2025-06-20</td>
+        <td>
+          <button class="update-btn" onclick="updatePatient(this)">Update</button>
+          <button class="delete-btn" onclick="deletePatient(this)">Delete</button>
+        </td>
+        </tr>
+        <tr>
+        <td>Mohit Sharma</td>
+        <td>9076543213</td>
+        <td>mohit@123.com</td>
+        <td>20</td>
+        <td>Male</td>
+        <td>2025-06-23</td>
+        <td>
+          <button class="update-btn" onclick="updatePatient(this)">Update</button>
+          <button class="delete-btn" onclick="deletePatient(this)">Delete</button>
+        </td>
+        </tr>
+        <tr>
+        <td>Anjali Shaikh</td>
+        <td>9476643211</td>
+        <td>shaikh@91.com</td>
+        <td>34</td>
+        <td>female</td>
+        <td>2025-05-13</td>
+        <td>
+          <button class="update-btn" onclick="updatePatient(this)">Update</button>
+          <button class="delete-btn" onclick="deletePatient(this)">Delete</button>
+        </td>
+        </tr>
+        <tr>
+        <td>Virat Jain</td>
+        <td>9176543231</td>
+        <td>virat@423.com</td>
+        <td>32</td>
+        <td>Male</td>
+        <td>2024-06-06</td>
+        <td>
+          <button class="update-btn" onclick="updatePatient(this)">Update</button>
+          <button class="delete-btn" onclick="deletePatient(this)">Delete</button>
+        </td>
+        </tr>
+        <tr>
+        <td>Mohini Kale</td>
+        <td>8876543213</td>
+        <td>mohini@567.com</td>
+        <td>45</td>
+        <td>female</td>
+        <td>2024-05-22</td>
+        <td>
+          <button class="update-btn" onclick="updatePatient(this)">Update</button>
+          <button class="delete-btn" onclick="deletePatient(this)">Delete</button>
+        </td>
+        </tr>
+        <tr>
+        <td>Krishna Mishra</td>
+        <td>8796543210</td>
+        <td>krishna@example.com</td>
+        <td>56</td>
+        <td>Male</td>
+        <td>2024-04-20</td>
+        <td>
+          <button class="update-btn" onclick="updatePatient(this)">Update</button>
+          <button class="delete-btn" onclick="deletePatient(this)">Delete</button>
+        </td>
+        <tr>
+        <td>Sidhhi Kumar</td>
+        <td>906543289</td>
+        <td>sidhhi@90.com</td>
+        <td>33</td>
+        <td>Female</td>
+        <td>2024-02-21</td>
+        <td>
+          <button class="update-btn" onclick="updatePatient(this)">Update</button>
+          <button class="delete-btn" onclick="deletePatient(this)">Delete</button>
+        </td>
+        </tr>
+        <tr>
+        <td>Akash Verma</td>
+        <td>9876543210</td>
+        <td>akash@example.com</td>
+        <td>29</td>
+        <td>Male</td>
+        <td>2025-06-01</td>
+        <td>
+          <button class="update-btn" onclick="updatePatient(this)">Update</button>
+          <button class="delete-btn" onclick="deletePatient(this)">Delete</button>
+        </td>
+        </tr>
+        <td>Kriti Varma</td>
+        <td>8876543278</td>
+        <td>kriti456@.com</td>
+        <td>55</td>
+        <td>female</td>
+        <td>2023-07-21</td>
+        <td>
+          <button class="update-btn" onclick="updatePatient(this)">Update</button>
+          <button class="delete-btn" onclick="deletePatient(this)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function deletePatient(btn) {
+      const row = btn.parentElement.parentElement;
+      row.remove();
+      alert("Patient record deleted.");
+    }
+
+    function updatePatient(btn) {
+      const row = btn.parentElement.parentElement;
+      const name = row.cells[0].innerText;
+      alert("Update record for: " + name);
+      // You can replace this alert with a popup form or redirect to edit page
+    }
+  </script>
+
+</body>
+</html>
+
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+
+  <script>
+    function deletePatient(btn) {
+      const row = btn.parentElement.parentElement;
+      row.remove();
+      alert("Patient record deleted.");
+    }
+
+    function updatePatient(btn) {
+      const row = btn.parentElement.parentElement;
+      const name = row.cells[0].innerText;
+      alert("Update record for: " + name);
+      // You can replace this alert with a popup form or redirect to edit page
+    }
+  </script>
+
+</body>
+</html>
